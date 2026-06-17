@@ -3,6 +3,9 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
+  <Project Path="BianarySearch/BianarySearch.vcxproj" Id="60e027da-2fb6-4885-8706-67f3cd1ec71f" />
+  <Project Path="ChapterSixBuddleSorting/ChapterSixBuddleSorting.vcxproj" Id="aafaf35f-9d13-4934-b7ea-5742b7772b95" />
+  <Project Path="ChapterSixPartOne/ChapterSixPartOne.vcxproj" Id="b4bc6f6d-412c-4733-87ac-ff4f6ded8a10" />
   <Project Path="ChapterTwo/ChapterTwo.vcxproj" Id="3fcef20d-b853-4904-bcda-41b19cea3bee" />
   <Project Path="ChapterTwoPartTwo/ChapterTwoPartTwo.vcxproj" Id="dff45087-bc5b-4ad9-865a-ad0097e7b55e" />
   <Project Path="ChatperSixTicTacToeGame/ChatperSixTicTacToeGame.vcxproj" Id="3b9140a7-8a5a-4c4b-ac7a-f1621628a973" />
