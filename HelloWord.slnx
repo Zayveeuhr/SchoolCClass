@@ -12,5 +12,6 @@
   <Project Path="ChatpterThreePartOne/ChatpterThreePartOne.vcxproj" Id="46bc3f2e-38ac-47ca-b8de-baf8d9f7d24f" />
   <Project Path="FortuneCookie/FortuneCookie.vcxproj" Id="129c8130-b8e2-4e1e-983e-f056ab649dba" />
   <Project Path="HelloWorld/HelloWorld.vcxproj" Id="a163e59b-d7ab-44e0-b376-476da4038c10" />
+  <Project Path="MenuDrivenArray/MenuDrivenArray.vcxproj" Id="ef4a5b52-0654-4657-948b-8c00a3532d42" />
   <Project Path="TheFourthLoop/TheFourthLoop.vcxproj" Id="2c4a21ba-81f2-44de-9a2e-6b7a2ff6e4e7" />
 </Solution>
