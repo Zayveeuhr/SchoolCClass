@@ -14,4 +14,5 @@
   <Project Path="HelloWorld/HelloWorld.vcxproj" Id="a163e59b-d7ab-44e0-b376-476da4038c10" />
   <Project Path="MenuDrivenArray/MenuDrivenArray.vcxproj" Id="ef4a5b52-0654-4657-948b-8c00a3532d42" />
   <Project Path="TheFourthLoop/TheFourthLoop.vcxproj" Id="2c4a21ba-81f2-44de-9a2e-6b7a2ff6e4e7" />
+  <Project Path="TwoDArrayProgramScores/TwoDArrayProgramScores.vcxproj" Id="3f2e5abd-9a2a-4a9d-bc60-f8cdab02ed51" />
 </Solution>

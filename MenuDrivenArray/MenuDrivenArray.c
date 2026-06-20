@@ -27,7 +27,7 @@ int main()
 		printf("\t[Q]uit the program\n");
 
 		printf("\nWhat would you like to do: ");
-		scanf_s(" %c", &cResponse);
+		scanf_s(" %c", &cResponse, 1);
 
 		switch (cResponse)
 		{
