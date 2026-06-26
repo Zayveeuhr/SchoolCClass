@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include <string.h>
+
 
 #define MAX_WORDS 1000
-#define MAX_WORD_LENGTH 50
+#define MAX_WORD_LENGTH 51
 
 void LoadWords(char words[][MAX_WORD_LENGTH], int* count);
 void SaveWords(char words[][MAX_WORD_LENGTH], int count);
@@ -13,90 +13,60 @@ void DumpWords(char words[][MAX_WORD_LENGTH], int* count);
 
 int main()
 {
-    char words[MAX_WORDS][MAX_WORD_LENGTH] = { '\0' };
-    int count = 0;
-    int choice = 0;
-    bool quit = false;
+    char cWords[MAX_WORDS][MAX_WORD_LENGTH] = { '\0' };
+    int iCount = 0;
+    int iChoice = 0;
+    bool bQuit = false;
 
-    LoadWords(words, &count);
+    LoadWords(cWords, &iCount);
 
     do
     {
-        printf("\n*** WORD MENU ***\n");
-        printf("1) Add word\n");
-        printf("2) Create text document\n");
-        printf("3) Dump all words\n");
-        printf("4) Quit\n");
+        printf("\n\t*** WORD MENU ***\n");
+        printf("\t1) Add word\n");
+        printf("\t2) Create text document\n");
+        printf("\t3) Dump all words\n");
+        printf("\t4) Quit\n");
         printf("Enter choice: ");
-        scanf_s("%d", &choice);
+        scanf_s("%d", &iChoice);
 
-        switch (choice)
+        while (getchar() != '\n');
+
+        if (iChoice != 1 && iChoice != 2 && iChoice != 3 && iChoice != 4)
+        {
+            printf("\nInvalid choice.\n");
+
+            while (getchar() != '\n'); // clear bad input
+        }
+
+        switch (iChoice)
         {
         case 1:
-            AddWord(words, &count);
+            AddWord(cWords, &iCount);
             break;
 
         case 2:
-            CreateTextFile(words, count);
+            CreateTextFile(cWords, iCount);
             break;
 
         case 3:
-            DumpWords(words, &count);
+            DumpWords(cWords, &iCount);
             break;
 
         case 4:
-            SaveWords(words, count);
-            quit = true;
-            break;
-
-        default:
-            printf("\nInvalid choice.\n");
+            SaveWords(cWords, iCount);
+            bQuit = true;
             break;
         }
 
-    } while (!quit);
+    } while (bQuit != true);
 
     return 0;
 }
 
-void LoadWords(char words[][MAX_WORD_LENGTH], int* count)
-{
-    FILE* file = fopen("words.bin", "rb");
-
-    if (file == NULL)
-    {
-        printf("\nNo saved binary file found.\n");
-        return;
-    }
-
-    fread(count, sizeof(int), 1, file);
-    fread(words, sizeof(char), MAX_WORDS * MAX_WORD_LENGTH, file);
-
-    fclose(file);
-
-    printf("\nLoaded %d words from binary file.\n", *count);
-}
-
-void SaveWords(char words[][MAX_WORD_LENGTH], int count)
-{
-    FILE* file = fopen("words.bin", "wb");
-
-    if (file == NULL)
-    {
-        printf("\nError saving binary file.\n");
-        return;
-    }
-
-    fwrite(&count, sizeof(int), 1, file);
-    fwrite(words, sizeof(char), MAX_WORDS * MAX_WORD_LENGTH, file);
-
-    fclose(file);
-
-    printf("\nWords saved to binary file.\n");
-}
-
 void AddWord(char words[][MAX_WORD_LENGTH], int* count)
 {
+    // As long as count is less than max words allowed keep allowing user to add words
     if (*count >= MAX_WORDS)
     {
         printf("\nMaximum word limit reached.\n");
@@ -104,7 +74,7 @@ void AddWord(char words[][MAX_WORD_LENGTH], int* count)
     }
 
     printf("\nEnter word: ");
-    scanf_s("%50s", words[*count], (unsigned)MAX_WORD_LENGTH);
+    scanf_s("%50[^\n]", words[*count], MAX_WORD_LENGTH); // only allow up to a 50 char string 
 
     (*count)++;
 }
@@ -139,4 +109,40 @@ void DumpWords(char words[][MAX_WORD_LENGTH], int* count)
     *count = 0;
 
     printf("\nAll words have been dumped from the program.\n");
+}
+
+void SaveWords(char words[][MAX_WORD_LENGTH], int count)
+{
+    FILE* file = fopen("words.bin", "wb");
+
+    if (file == NULL)
+    {
+        printf("\nError saving binary file.\n");
+        return;
+    }
+
+    fwrite(&count, sizeof(int), 1, file);
+    fwrite(words, sizeof(char), MAX_WORDS * MAX_WORD_LENGTH, file);
+
+    fclose(file);
+
+    printf("\nWords saved to binary file.\n");
+}
+
+void LoadWords(char words[][MAX_WORD_LENGTH], int* count)
+{
+    FILE* file = fopen("words.bin", "rb");
+
+    if (file == NULL)
+    {
+        printf("\nNo saved binary file found.\n");
+        return;
+    }
+
+    fread(count, sizeof(int), 1, file);
+    fread(words, sizeof(char), MAX_WORDS * MAX_WORD_LENGTH, file);
+
+    fclose(file);
+
+    printf("\nLoaded %d words from binary file.\n", *count);
 }
