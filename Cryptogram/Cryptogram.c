@@ -78,7 +78,7 @@ void decrypt(char sMessage[], int random)
 	{
 		sMessage[x] = sMessage[x] - random;
 		x++;
-	}
+	}q
 	x = 0;
 
 	printf("\nDecrypted message is: ");
