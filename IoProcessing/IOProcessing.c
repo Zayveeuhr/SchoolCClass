@@ -30,7 +30,7 @@ int main()
         printf("Enter choice: ");
         scanf_s("%d", &iChoice);
 
-        while (getchar() != '\n');
+        while (getchar() != '\n'); // clear bad input and prevent loop from forming
 
         if (iChoice != 1 && iChoice != 2 && iChoice != 3 && iChoice != 4)
         {
@@ -74,14 +74,14 @@ void AddWord(char words[][MAX_WORD_LENGTH], int* count)
     }
 
     printf("\nEnter word: ");
-    scanf_s("%50[^\n]", words[*count], MAX_WORD_LENGTH); // only allow up to a 50 char string 
+    scanf_s("%50[^\n]", words[*count], MAX_WORD_LENGTH); // only allow up to a 50 char string and using regex to allow spacing 
 
     (*count)++;
 }
 
 void CreateTextFile(char words[][MAX_WORD_LENGTH], int count)
 {
-    FILE* file = fopen("words.txt", "w");
+    FILE* file = fopen("words.txt", "w"); // Creates file in current dirrectory
 
     if (file == NULL)
     {
@@ -101,12 +101,12 @@ void CreateTextFile(char words[][MAX_WORD_LENGTH], int count)
 
 void DumpWords(char words[][MAX_WORD_LENGTH], int* count)
 {
-    for (int i = 0; i < MAX_WORDS; i++)
+    for (int i = 0; i < MAX_WORDS; i++) // set all words back to null
     {
         words[i][0] = '\0';
     }
 
-    *count = 0;
+    *count = 0; // restart count
 
     printf("\nAll words have been dumped from the program.\n");
 }
@@ -139,10 +139,17 @@ void LoadWords(char words[][MAX_WORD_LENGTH], int* count)
         return;
     }
 
+    // load in all word from bin file and also the count 
     fread(count, sizeof(int), 1, file);
     fread(words, sizeof(char), MAX_WORDS * MAX_WORD_LENGTH, file);
 
     fclose(file);
 
     printf("\nLoaded %d words from binary file.\n", *count);
+    printf("\nThe words loaded in are: \n");
+    
+    for (int i = 0; i < *count; i++) // write all words to scren when loaded in
+    {
+        printf("%d. %s\n", i + 1, words[i]);
+    }
 }
