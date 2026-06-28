@@ -3,7 +3,6 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="IoProcessing/IoProcessing.vcxproj" Id="ab778d20-a544-4ec5-aa48-c5900e9a4239" />
   <Project Path="X:/CSPrograming/HelloWord/BianarySearch/BianarySearch.vcxproj" Id="60e027da-2fb6-4885-8706-67f3cd1ec71f" />
   <Project Path="X:/CSPrograming/HelloWord/ChapterSixBuddleSorting/ChapterSixBuddleSorting.vcxproj" Id="aafaf35f-9d13-4934-b7ea-5742b7772b95" />
   <Project Path="X:/CSPrograming/HelloWord/ChapterSixPartOne/ChapterSixPartOne.vcxproj" Id="b4bc6f6d-412c-4733-87ac-ff4f6ded8a10" />
@@ -14,8 +13,10 @@
   <Project Path="X:/CSPrograming/HelloWord/Cryptogram/Cryptogram.vcxproj" Id="e3564bc3-8cb8-43f1-ad19-3db3d1dd6842" />
   <Project Path="X:/CSPrograming/HelloWord/FortuneCookie/FortuneCookie.vcxproj" Id="129c8130-b8e2-4e1e-983e-f056ab649dba" />
   <Project Path="X:/CSPrograming/HelloWord/HelloWorld/HelloWorld.vcxproj" Id="a163e59b-d7ab-44e0-b376-476da4038c10" />
+  <Project Path="X:/CSPrograming/HelloWord/IoProcessing/IoProcessing.vcxproj" Id="ab778d20-a544-4ec5-aa48-c5900e9a4239" />
   <Project Path="X:/CSPrograming/HelloWord/MenuDrivenArray/MenuDrivenArray.vcxproj" Id="ef4a5b52-0654-4657-948b-8c00a3532d42" />
   <Project Path="X:/CSPrograming/HelloWord/PlayingWithStrings/PlayingWithStrings.vcxproj" Id="683e6a36-5e47-4c5b-83fd-3ceb64e9f44c" />
+  <Project Path="X:/CSPrograming/HelloWord/StringDecoder/StringDecoder.vcxproj" Id="1e1a1b63-8f6b-4d70-87b6-8416eb7b2510" />
   <Project Path="X:/CSPrograming/HelloWord/TheFourthLoop/TheFourthLoop.vcxproj" Id="2c4a21ba-81f2-44de-9a2e-6b7a2ff6e4e7" />
   <Project Path="X:/CSPrograming/HelloWord/TwoDArrayProgramScores/TwoDArrayProgramScores.vcxproj" Id="3f2e5abd-9a2a-4a9d-bc60-f8cdab02ed51" />
 </Solution>
